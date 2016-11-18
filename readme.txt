@@ -1,51 +1,54 @@
-=== Menu Item Custom Fields ===
-Contributors: kucrut
-Donate Link: http://kucrut.org/#coffee
-Tags: menu, nav-menu, custom-fields, metadata
-Requires at least: 3.8
-Tested up to: 4.4
-Stable tag: 0.3.0
-License: GPLv2
+﻿=== Location "Nav Menu" for ACF ===
+Contributors: psd2html
+Donate link: http://psd2html.com
+Tags: acf, menu, acf location
+Requires at least: 4.0
+Tested up to: 4.3.1
+Stable tag: 1.1
+Current Supported  ACF Version: 5.3.1
+License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Easily add custom fields to nav menu items.
-
+Say NO to complex, inconvenient, and unpractical workarounds and easily create powerful mega-menus and custom features you've always wanted.
 
 == Description ==
-This is a *library* plugin. It doesn't do anything visible on its own. It was written to allow other plugins/themes to add custom fields to menu items *easily*. See **Installation**.
+Unleash the full power of the ACF PRO plugin to extend WordPress menu functionality. With this add-on, you can display custom fields of different types directly under general menu field items while editing your menu in the admin panel. 
 
-Development of this plugin is done on [GitHub](https://github.com/kucrut/wp-menu-item-custom-fields). **Pull requests welcome**. Please see [issues reported](https://github.com/kucrut/wp-menu-item-custom-fields/issues) there before going to the plugin forum.
+Advanced Custom Fields Compatibility
+
+This add-on works smoothly with version 5+.
 
 
 == Installation ==
+1. From the dashboard of your site, navigate to Plugins → Add New.
+2. Select the Upload option and hit "Choose File".
+3. When the popup appears, select the acf-menu-location.zip file from your computer.
+4. Follow the on-screen instructions and wait as the upload completes.
+5. When it's finished, activate the plugin via the prompt. A message will show confirming activation was successful.
 
-= As regular plugin =
-1. Upload `menu-item-custom-fields` to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
 
-= As library in your plugin/theme =
-Simply copy `menu-item-custom-fields` to your plugin directory and require the main plugin file, eg:
-`
-require_once dirname( __FILE__ ) . '/menu-item-custom-fields/menu-item-custom-fields.php';
-`
+== Frequently Asked Questions ==
 
-= Usage =
-Copy (and customize) and include the `menu-item-custom-fields-example.php` file found in the `doc/` directory of this plugin into your plugin/theme.
+= How can I display a custom menu item field in the front-end? = 
+
+Menu items in the database are stored the same way as regular posts. Therefore, fields set to menu items use the same operation logic as posts. You don't have to use any additional functions or third-party parameters. However, since the output of menu items is often implemented outside the WordPress loop, you must specify the menu item ID (i.e. $item->ID, not $item->object_id) as the second parameter of the function get_field (or the_field etc.).
+
+= Can I add fields to a certain menu only? =
+
+Yes, when you select the location while creating a group of fields, you can select one (or more, using the logic of the rules) from the existing WordPress menus on your website. Fields are added to all existing menus by default. 
 
 
 == Changelog ==
-= 0.3.0 =
-* Use `wp_nav_menu_item_custom_fields` as walker hook. See this [blog post](http://shazdeh.me/2014/06/25/custom-fields-nav-menu-items/).
-* Update example plugin
 
-= 0.2.1 =
-* Update compatibility info
+= Version 1.1 =
+* Initial release
 
-= 0.2.0 =
-* Improve walker class loader
 
-= 0.1.1 =
-* Move custom fields up (before `<p.field-move />`)
+== Upgrade Notice ==
 
-= 0.1.0 =
-* Initial public release
+= 1.1 =
+* Initial release
+
+== Screenshots ==
+
+1. Back-end View
